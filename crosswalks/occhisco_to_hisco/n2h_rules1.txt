@@ -1,0 +1,44 @@
+File: n2h_rules1.txt
+Author: Richard Zijdeman (r.l.zijdeman@uu.nl)
+Date: Feb 22, 2011
+Last change: -
+
+Rules for coding NAPP's OCCHISCO back to HISCO
+
+* I use the term NAPP code, instead of OCCHISCO code, in order to avoid confusion with the terms OCCHISCO and HISCO.
+
+Since NAPP is based on HISCO, a few NAPP titles are relatively easy to code back to HISCO (e.g. bleacher, dyer or textile product finisher, specialisation unknown in HISCO vs. bleacher, dyer or textile product finisher in NAPP).
+
+However, on the whole this exercise proved to be quite problematic: Many of the NAPP codes are based on several separate HISCO codes. Therefore NAPP codes often refer to multiple categories and one has to choose in which HISCO category the NAPP score is placed (e.g. NAPP code 95410: "Carpenter and joiner", NAPP code 61320 "Farmer and Fisherman"). 
+
+Furthermore, sometimes the title of the NAPP category is different from that in HISCO, whereas the occupational code involved is the same, (which makes one wonder why the title of the category was changed altogether). For example: NAPP's "Bristle and straw workers nec" has the same code (9-42.90) as HISCO's "Other basketry weavers and brush makers". This also happens quite often with the "other ..."-categories. 
+
+In some instances NAPP codes seem to combine a single HISCO together with HISCO's auxiliary variables: status, relation, product. This results in a variety of NAPP codes, which can only coded back to a single HISCO code. This is for example the case with different types of the "executive officer" and "Farmer's sons and other male relatives". 
+
+Finally, there are some occupational categories, that can no longer be traced back to any HISCO code (e.g. apprentices). Apprentice is actually a value in HISCO's auxiliary variable status and apprentice does not provide any information on the occupation at hand. Therefore, I coded these kind of titles in HISCO's 9-99.99.
+
+While trying to make a conversion from NAPP to HISCO I have tried to setup (and stick to) the following coding rules:
+
+!!! WARNING !!!
+STATUS, RELATIONSHIP and PRODUCT ARE NOT CODED!!!
+
+(1a) in case of double titles, the first title is coded:
+e.g. annealers and temperers--metal -> annealer 72620
+(1b) unless the first title is too inspecific to be coded into hisco
+(1c) or unless there is a good alternative to code both IPUMS titles into a single HISCO title, e.g.:
+"Blast furnaces and steel rolling mills (includes tin-plate factories)" is 72120 "blast furnacemen (ore smelting)
+and 72200, but can go together in 72000 "metal processor, spec unknown".
+
+(2a) Ipums occ titles referring to "factories", without an exact specification of the the occ title, are coded as workers. If possible workers of the specific industry that is referred to, otherwise to factory workers (99930).
+
+(2b) Ipums occ titles referring to shops (e.g. bakeries, launderies), without an exact specification of the the occ title, are coded as 45190 (other salesmen, shop assistants and demonstrators) Note that in case of bakeries, "bakers" are listed in Ipums as well.
+
+
+(3) if the Ipums occupational title is inspecific, and there is no general HiSCO code available (xxx.00 / xx.000) codes,than the title is coded into the "other" category (xxx.90) of the job at hand.
+
+
+Richard Zijdeman
+Utrecht Univeristy
+r.l.zijdeman@uu.nl
+
+
